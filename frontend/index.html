@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Transactions Dashboard</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div id="app">
+    <div class="filters">
+      <label for="month">Select Month:</label>
+      <select id="month" onchange="loadData()">
+        <option value="January">January</option>
+        <option value="February">February</option>
+        <option value="March" selected>March</option>
+       
+      </select>
+
+      <label for="search">Search:</label>
+      <input type="text" id="search" oninput="loadData()" placeholder="Search transactions">
+
+      <button onclick="loadData('prev')">Previous</button>
+      <button onclick="loadData('next')">Next</button>
+    </div>
+
+    <div class="transactions">
+      <table>
+        <thead>
+          <tr>
+            <th>Title</th>
+            <th>Description</th>
+            <th>Price</th>
+          </tr>
+        </thead>
+        <tbody id="transactionTableBody"></tbody>
+      </table>
+    </div>
+
+    <div class="statistics">
+      <h2>Statistics</h2>
+      <p>Total Sale Amount: <span id="totalSaleAmount"></span></p>
+      <p>Total Sold Items: <span id="totalSoldItems"></span></p>
+      <p>Total Not Sold Items: <span id="totalNotSoldItems"></span></p>
+    </div>
+
+    <div class="bar-chart" id="barChart"></div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>
